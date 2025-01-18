@@ -10,6 +10,8 @@ import p_img4 from './p_img4.png'
 import p_img5 from './p_img5.png'
 import p_img1 from './p_img6.png'
 import p_img7 from './p_img7.png'
+import p_img8 from './p_img8.png'
+import p_img9 from './p_img9.png'
 import quality_icon from './quality_icon.png'
 
 export const assets = {
@@ -25,8 +27,9 @@ export const assets = {
     p_img4,
     p_img5,
     p_img6,
-    p_img7
-    
+    p_img7,
+    p_img8,
+    p_img9
 };
 
 
@@ -117,6 +120,32 @@ const Products = [
         image: [p_img7],
         category: "unisex",
         subcategory: "kitchenasses...",
+        size: ["s","m","l"],
+        date: 887908099880,
+        bestseller: true
+
+    },
+    {
+        _id: "hhhhh",
+        name: "fashion & cloth",
+        price: 8880,
+        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+        image: [p_img8],
+        category: "unisex",
+        subcategory: "winterwear",
+        size: ["s","m","l"],
+        date: 887908099880,
+        bestseller: true
+
+    },
+    {
+        _id: "iiiii",
+        name: "fashion & cloth",
+        price: 8880,
+        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+        image: [p_img9],
+        category: "unisex",
+        subcategory: "winterwear",
         size: ["s","m","l"],
         date: 887908099880,
         bestseller: true

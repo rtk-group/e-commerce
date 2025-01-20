@@ -11,7 +11,7 @@ const Collection = () => {
   const [filterproduct, setfilterproduct] = useState([]);
   const [category, setcategory] = useState([]);
   const [subcategory, setsubcategory] = useState([]);
-
+  const [shorttype, setshorttype] = useState('relavent')
 
   const togglecategory = (e)=>{ 
     if(category.includes(e.target.value)){
@@ -45,18 +45,35 @@ setfilterproduct(productcopy);
   productcopy =  productcopy.filter((item)=>subcategory.includes(item.subcategory));
 }
 setfilterproduct(productcopy);
+};
 
-  
-   
- }
+const shortproduct = ()=>{
+  let fpcopy = filterproduct.slice();
 
-  useEffect(() => {
-    setfilterproduct(products);
-  }, []);
+  switch(shorttype){
+    case 'low-high':
+      setfilterproduct(fpcopy.sort((a,b)=>(console.log(a,b))))
+      break;
+
+    case 'high-low':
+      setfilterproduct(fpcopy.sort((a,b)=>(b.price-a.price)))
+      break;
+
+      default:
+        applyfilter();
+        break;
+  }
+}
+
+
 
   useEffect(() => {
     applyfilter();
   }, [category,subcategory]);
+
+  useEffect(() => {
+    shortproduct();
+  }, [shorttype]);
 
 
   return (
@@ -104,7 +121,7 @@ setfilterproduct(productcopy);
         <div className="flex justify-between text-base sm:text-2xl mb-4">
           <Tittle text1={'ALL'} text2={'COLLECTION'} />
           {/* product short */}
-          <select className='border-2 border-gray-300 text-sm px-2'>
+          <select onChange={(e)=>(setshorttype(e.target.value))} className='border-2 border-gray-300 text-sm px-2'>
             <option value="relavent">Short by: Relavent </option>
             <option value="low-high">Short by: Low to High</option>
             <option value="high-low">Short by: High to Low</option>

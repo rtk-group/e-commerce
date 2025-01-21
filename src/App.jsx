@@ -12,6 +12,7 @@ import Product from './Pages/Product.jsx'
 import Contact from './Pages/Contact.jsx'
 import Navbar from './Component/Navbar.jsx'
 import Footer from './Component/Footer.jsx'
+import Searchbaar from './Component/Searchbaar.jsx'
 
 
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
       <Navbar/>
+      <Searchbaar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>

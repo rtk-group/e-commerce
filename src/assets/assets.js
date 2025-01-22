@@ -36,7 +36,7 @@ export const assets = {
 const Products = [
     {
         _id: "aaaa",
-        name: "women round neck cotton top",
+        name: "Women round neck cotton Top",
         price: 1000,
         description : "a lightweight usually knitted pullover shirt, close-fitting",
         image: [p_img1],

@@ -39,10 +39,10 @@ const Products = [
         name: "Women round neck cotton Top",
         price: 1000,
         description : "a lightweight usually knitted pullover shirt, close-fitting",
-        image: [p_img1],
+        image: [p_img1 ,p_img8, p_img9,],
         category: "women",
         subcategory: "topwear",
-        size: ["s","m","l"],
+        size: ["S","M","L"],
         date: 887908099880,
         bestseller: true
 

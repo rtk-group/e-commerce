@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { shopcontext } from '../Context/Shopcontext'
+import Relatedproducts from '../Component/Relatedproducts';
+import { assets } from '../assets/assets';
 
 
 
@@ -50,14 +52,15 @@ const Product = () => {
         </div>
 
         {/* product info */}
-        <div className="flex-1 border border-black">
+        <div className="flex-1">
           <h1 className='font-medium text-2xl mt-2'>{productdata.name}</h1>
           <div className="flex items-center gap-1 mt-2">
-            <span className="w-3">*</span>
-            <span className="w-3">*</span>
-            <span className="w-3">*</span>
-            <span className="w-3">*</span>
-            <span className="w-3">*</span>
+            <img src={assets.star_icon} className="w-5" />
+            <img src={assets.star_icon} className="w-5" />
+            <img src={assets.star_icon} className="w-5" />
+            <img src={assets.star_icon} className="w-5" />
+            <img src={assets.star_icon} className="w-5" />
+            
             <p className="pl-2">(112)</p>
           </div>
           <p className="mt-5 text-3xl font-medium">{currency}{productdata.price}</p>
@@ -72,9 +75,30 @@ const Product = () => {
               }
             </div>
           </div>
+          <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
+          <hr className="mt-8 sm:w-4/5" />
+          <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
+            <p>100% Original Product.</p>
+            <p>Cash on delivery is available on this product.</p>
+            <p>Easy return & exchange policy within 7 days</p>
+          </div>
         </div>
-
       </div>
+      {/* description & preview section */}
+      <div className="mt-20">
+        <div className="flex">
+          <b className="border px-5 text-sm py-3">Description</b>
+          <p className="border px-5 py-3 text-sm">Reviews (122)</p>
+        </div>
+        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolorum corrupti cupiditate magnam nihil! Accusantium officiis ex ut nihil iure provident Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quibusdam laudantium numquam tempora est ullam iure, architecto recusandae Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus doloribus ipsum quasi optio perspiciatis! Nisi impedit eos amet cum aspernatur. fugiat culpa deleniti cumque, odio tenetur impedit? Veritatis expedita obcaecati ipsum porro. quidem veniam ipsum eius id est, repudiandae corporis. Vel?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorum beatae, molestias assumenda dolor accusamus sequi? Doloribus quae, optio reiciendis dolorem esse ad at, autem earum alias recusandae eveniet nostrum!</p>
+        </div>
+      </div>
+
+      {/* display related products */}
+      <Relatedproducts category={productdata.category} subcategory={productdata.subcategory}/>
+      
     </div>
   ) : <div className="opacity-0"></div>
 }

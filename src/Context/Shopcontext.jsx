@@ -45,13 +45,19 @@ const shopcontextprovider = (props)=>{
             }
         }
         return totalcount;
+    };
+
+    const updatequantity = async (itemid, size, quantity)=>{
+        let cartdata = structuredClone(cartitem);
+        cartdata[itemid][size] = quantity;
+        setcartitem(cartdata);
     }
 
 
     const value = {
         products, currency, delivery_fee,
         search, setsearch,showsearch, setshowsearch,
-        cartitem,addtocart, getcartcount
+        cartitem,addtocart, getcartcount,updatequantity
     };
 
     return (

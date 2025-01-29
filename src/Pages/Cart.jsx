@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { shopcontext } from '../Context/Shopcontext'
 import Tittle from '../Component/Tittle'
+import Cartotal from '../Component/Cartotal';
 
 const Cart = () => {
 
@@ -48,13 +49,18 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                    <input className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-2' type="number" min={1} defaultValue={item.quantity} />
+                    <input onChange={(e)=>e.target.value === "" || e.target.value === "0"? null:updatequantity(item._id,item.size,Number(e.target.value))} className='border max-w-10 sm:max-w-20 px-1 sm:px-2 py-2' type="number" min={1} defaultValue={item.quantity} />
                     <span onClick={()=>updatequantity(item._id,item.size,0)} className='w-4 mr-4 sm:w-5 cursor-pointer'>[del]</span>
               </div>
             )
 
           })
         }
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px]">
+          <Cartotal/>
+        </div>
       </div>
     </div>
   )

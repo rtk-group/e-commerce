@@ -51,13 +51,31 @@ const shopcontextprovider = (props)=>{
         let cartdata = structuredClone(cartitem);
         cartdata[itemid][size] = quantity;
         setcartitem(cartdata);
+    };
+
+    const getcartamount = ()=>{
+        let totalamount = 0;
+        for(const items in cartitem){
+            let iteminfo = products.find((product)=>product._id === items);
+            for(const item in cartitem[items]){
+                try{
+                    if(cartitem[items][item] > 0){
+                        totalamount += iteminfo.price*cartitem[items][item]; 
+                    }
+                }catch(error){
+
+                }
+            }
+        }
+        return totalamount;
     }
 
 
     const value = {
         products, currency, delivery_fee,
         search, setsearch,showsearch, setshowsearch,
-        cartitem,addtocart, getcartcount,updatequantity
+        cartitem,addtocart, getcartcount,updatequantity,
+        getcartamount
     };
 
     return (

@@ -1,6 +1,7 @@
 import { createContext ,useEffect,useState } from "react";
 import products from '../assets/assets.js' 
 import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom'
 
 export const shopcontext = createContext();
  
@@ -10,6 +11,7 @@ const shopcontextprovider = (props)=>{
     const [search, setsearch] = useState('');
     const [showsearch, setshowsearch] = useState(false);
     const [cartitem, setcartitem] = useState({});
+    const navigate = useNavigate()
 
     const addtocart = async (itemid, size)=>{
         if(!size){
@@ -75,7 +77,7 @@ const shopcontextprovider = (props)=>{
         products, currency, delivery_fee,
         search, setsearch,showsearch, setshowsearch,
         cartitem,addtocart, getcartcount,updatequantity,
-        getcartamount
+        getcartamount, navigate
     };
 
     return (

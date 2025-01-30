@@ -41,8 +41,6 @@ const Collection = () => {
     productcopy = productcopy.filter(item=>item.name.toLowerCase().includes(search.toLowerCase()));
   }
 
-
-  
   if(category.length > 0){
   productcopy =  productcopy.filter((item)=>category.includes(item.category));
 };
@@ -59,7 +57,7 @@ const shortproduct = ()=>{
 
   switch(shorttype){
     case 'low-high':
-      setfilterproduct(fpcopy.sort((a,b)=>(console.log(a,b))))
+      setfilterproduct(fpcopy.sort((a,b)=>(a.price-b.price)))
       break;
 
     case 'high-low':

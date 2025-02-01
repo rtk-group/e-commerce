@@ -11,7 +11,7 @@ const shopcontextprovider = (props)=>{
     const [search, setsearch] = useState('');
     const [showsearch, setshowsearch] = useState(false);
     const [cartitem, setcartitem] = useState({});
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const addtocart = async (itemid, size)=>{
         if(!size){
@@ -51,7 +51,7 @@ const shopcontextprovider = (props)=>{
 
     const updatequantity = async (itemid, size, quantity)=>{
         let cartdata = structuredClone(cartitem);
-        cartdata[itemid][size] = quantity;
+        cartdata[itemid][size] = quantity; 
         setcartitem(cartdata);
     };
 
@@ -89,3 +89,8 @@ const shopcontextprovider = (props)=>{
 
 export default shopcontextprovider 
  
+
+
+
+
+

@@ -8,7 +8,7 @@ import { assets } from '../assets/assets';
 
 const Product = () => {
 
-  const { products , currency , addtocart, cartitem } = useContext(shopcontext);
+  const { products , currency , addtocart,} = useContext(shopcontext);
   const { productid } = useParams();
   const [productdata, setproductdata] = useState(false);
   const [image, setimage] = useState('');

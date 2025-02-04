@@ -15,6 +15,8 @@ import p_img9 from './p_img9.png'
 import quality_icon from './quality_icon.png'
 import star_icon from './star_icon.png'
 import bin_icon from './bin_icon.png'
+import about_img from './about_img.png'
+import contact_img from './contact_img.png'
 
 export const assets = {
     quality_icon,
@@ -25,6 +27,8 @@ export const assets = {
     hero_img,
     star_icon,
     bin_icon,
+    about_img,
+    contact_img,
     p_img1,
     p_img2,
     p_img3,

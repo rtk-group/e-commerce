@@ -35,6 +35,15 @@ const shopcontextprovider = (props)=>{
             cartdata[itemid][size] = 1;
         }
         setcartitem(cartdata);
+        
+        if (token) {
+            try {
+                await axios.post('http://localhost:4000' + '/api/cart/add', {itemid, size}, {headers:{token}})
+            } catch (error) {
+                console.log(error)
+                toast.error(error.message)
+            }
+        }
     }
 
     const getcartcount = ()=>{

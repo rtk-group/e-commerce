@@ -66,7 +66,27 @@ const shopcontextprovider = (props)=>{
         let cartdata = structuredClone(cartitem);
         cartdata[itemid][size] = quantity; 
         setcartitem(cartdata);
+        if (token) {
+            try {
+                await axios.post('http://localhost:4000' + '/api/cart/update', {itemid, size, quantity}, {headers:{token}})
+            } catch (error) {
+                console.log(error)
+                toast.error(error.message);
+            }
+        }
     };
+
+    const getusercart = async(token)=>{
+        try {
+            const response = await axios.post('http://localhost:4000' + '/api/cart/get', {}, {headers:{token}})
+            if (response.data.success) {
+                setcartitem(response.data.cartData)
+            }
+        } catch (error) {
+            console.log(error)
+            toast.error(error.message);
+        } 
+    }
 
     const getcartamount = ()=>{
         let totalamount = 0;
@@ -107,6 +127,7 @@ const shopcontextprovider = (props)=>{
     useEffect(()=>{
         if(!token && localStorage.getItem('token')){
             settoken(localStorage.getItem('token'))
+            getusercart(localStorage.getItem('token'))
         }
     })
 

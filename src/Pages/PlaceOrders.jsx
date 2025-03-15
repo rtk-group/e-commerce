@@ -3,13 +3,14 @@ import Tittle from '../Component/Tittle'
 import Cartotal from '../Component/Cartotal'
 import { shopcontext } from '../Context/Shopcontext'
 import { toast } from 'react-toastify'
+import axios from 'axios'
 // import { Navigate } from 'react-router-dom';
 
 const PlaceOrders = () => {
 
   const {navigate, token, cartitem, setcartitem, getcartamount, delivery_fee, products} = useContext(shopcontext);
 
-  const [method, setmethod] = useState('cdo');
+  const [method, setmethod] = useState('cod');
 
   const [formdata, setformdata] = useState({
     firstname:'',
@@ -47,7 +48,7 @@ const PlaceOrders = () => {
         }
       }
 
-      console.log(orderitems)
+      // console.log(orderitems)
 
       let orderdata = {
         address: formdata,
@@ -57,14 +58,14 @@ const PlaceOrders = () => {
 
       switch (method) {
         case 'cod':
-          const response = await axios.post('http://localhost:4000' + '/api/order/place', orderdata, {header:{token}})
+          const response = await axios.post('http://localhost:4000' + '/api/order/place', orderdata, {headers:{token}})
           console.log(response)
-          // if (response.data.success) {
-          //   setcartitem({})
-          //   navigate('/orders')
-          // }else{
-          //   toast.error(response.data.message)
-          // }
+          if (response.data.success) {
+            setcartitem({})
+            navigate('/orders')
+          }else{
+            toast.error(response.data.message)
+          }
           
           break;
       

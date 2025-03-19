@@ -34,7 +34,7 @@ const PlaceOrders = () => {
   const onsubmithandler = async(e)=>{
     e.preventDefault()
     try{
-      let orderitems = []
+      let orderitems = [];
       for(const items in cartitem){
         for(const item in cartitem[items]){
           if (cartitem[items][item] > 0){
@@ -48,8 +48,6 @@ const PlaceOrders = () => {
         }
       }
 
-      // console.log(orderitems)
-
       let orderdata = {
         address: formdata,
         items: orderitems,
@@ -59,7 +57,6 @@ const PlaceOrders = () => {
       switch (method) {
         case 'cod':
           const response = await axios.post('http://localhost:4000' + '/api/order/place', orderdata, {headers:{token}})
-          console.log(response)
           if (response.data.success) {
             setcartitem({})
             navigate('/orders')
@@ -136,3 +133,8 @@ const PlaceOrders = () => {
 }
 
 export default PlaceOrders
+
+
+
+
+

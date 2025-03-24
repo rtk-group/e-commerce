@@ -14,6 +14,7 @@ import Navbar from './Component/Navbar.jsx'
 import Footer from './Component/Footer.jsx'
 import Searchbaar from './Component/Searchbaar.jsx'
 import { ToastContainer, toast } from 'react-toastify';
+import Verify from './Pages/Verify.jsx'
 
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path='/placeorders' element={<PlaceOrders/>}/>
         <Route path='/product/:productid' element={<Product/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/verify' element={<Verify/>}/>
       </Routes>
       <Footer/>
       </div>

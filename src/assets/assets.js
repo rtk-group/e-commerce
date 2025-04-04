@@ -23,7 +23,7 @@ import dropdown_icon from './dropdown_icon.png'
 import exchange_icon from './exchange_icon.png'
 import support_img from './support_img.png'
 
-const assets = {
+export const assets = {
     support_img,
     exchange_icon,
     dropdown_icon,
@@ -50,4 +50,4 @@ const assets = {
     p_img9
 };
 
-export default assets;
+

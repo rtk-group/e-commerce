@@ -5,22 +5,21 @@ import axios from 'axios';
 
 const Orders = () => {
 
-  const {token, currency} = useContext(shopcontext);
-
+  const { token, currency, backendurl } = useContext(shopcontext);
   const [orderdata, setorderdata] = useState([])
 
-  const loardorderdata = async() => {
+  const loardorderdata = async () => {
     try {
-      if(!token){
-        return null 
+      if (!token) {
+        return null
       }
 
-      const response = await axios.post('http://localhost:4000' + '/api/order/userorders', {}, {headers:{token}})
+      const response = await axios.post(backendurl + '/api/order/userorders', {}, { headers: { token } })
 
       if (response.data.success) {
         let allordersitem = []
-        response.data.orders.map((order)=>{
-          order.items.map((item)=>{
+        response.data.orders.map((order) => {
+          order.items.map((item) => {
             item['status'] = order.status
             item['payment'] = order.payment
             item['paymentmethod'] = order.paymentmethod
@@ -28,7 +27,7 @@ const Orders = () => {
             allordersitem.push(item)
           })
         })
-      
+
         setorderdata(allordersitem.reverse())
       }
 
@@ -38,23 +37,22 @@ const Orders = () => {
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     loardorderdata()
-  },[token]);
-
+  }, [token]);
 
   return (
     <div className='border-t pt-16'>
       <div className="text-2xl">
-        <Tittle text1={'MY'} text2={'ORDERS'}/>
+        <Tittle text1={'MY'} text2={'ORDERS'} />
       </div>
 
       <div>
         {
-          orderdata.map((item, index)=>(
+          orderdata.map((item, index) => (
             <div key={index} className="py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="flex items-start gap-6 text-sm">
-                <img className='w-16 sm:w-20' src={item.image[0]} alt="image"/>
+                <img className='w-16 sm:w-20' src={item.image[0]} alt="image" />
                 <div>
                   <p className="sm:text-base font-medium">{item.name}</p>
                   <div className="flex items-center gap-3 mt-1 text-base text-gray-700">

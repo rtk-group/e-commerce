@@ -17,8 +17,18 @@ import star_icon from './star_icon.png'
 import bin_icon from './bin_icon.png'
 import about_img from './about_img.png'
 import contact_img from './contact_img.png'
+import razorpay_logo from './razorpay_logo.png'
+import stripe_logo from './stripe_logo.png'
+import dropdown_icon from './dropdown_icon.png'
+import exchange_icon from './exchange_icon.png'
+import support_img from './support_img.png'
 
 export const assets = {
+    support_img,
+    exchange_icon,
+    dropdown_icon,
+    razorpay_logo,
+    stripe_logo,
     quality_icon,
     search_icon,
     profile_icon,
@@ -41,124 +51,124 @@ export const assets = {
 };
 
 
-const Products = [
-    {
-        _id: "aaaa",
-        name: "Women round neck cotton Top",
-        price: 1000,
-        description : "a lightweight usually knitted pullover shirt, close-fitting",
-        image: [p_img1 ,p_img8, p_img9,],
-        category: "women",
-        subcategory: "topwear",
-        size: ["S","M","L"],
-        date: 887908099880,
-        bestseller: true
+// const Products = [
+//     {
+//         _id: "aaaa",
+//         name: "Women round neck cotton Top",
+//         price: 1000,
+//         description : "a lightweight usually knitted pullover shirt, close-fitting",
+//         image: [p_img1 ,p_img8, p_img9,],
+//         category: "women",
+//         subcategory: "topwear",
+//         size: ["S","M","L"],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "bbbb",
-        name: "cleaner",
-        price: 1800,
-        description : "a best mirror cleaner just spray and clean",
-        image: [p_img2],
-        category: "women",
-        subcategory: "winterwear",
-        size: [],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "bbbb",
+//         name: "cleaner",
+//         price: 1800,
+//         description : "a best mirror cleaner just spray and clean",
+//         image: [p_img2],
+//         category: "women",
+//         subcategory: "winterwear",
+//         size: [],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "ccccc",
-        name: "face creem",
-        price: 7900,
-        description : "best face creame for glow your face",
-        image: [p_img3],
-        category: "women",
-        subcategory: "winterwear",
-        size: [],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "ccccc",
+//         name: "face creem",
+//         price: 7900,
+//         description : "best face creame for glow your face",
+//         image: [p_img3],
+//         category: "women",
+//         subcategory: "winterwear",
+//         size: [],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "ddddd",
-        name: "glass zar",
-        price: 9999,
-        description : "a glass zar for your kitchen food keep fresh",
-        image: [p_img4],
-        category: "kids",
-        subcategory: "winterwear",
-        size: ["s","m","l"],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "ddddd",
+//         name: "glass zar",
+//         price: 9999,
+//         description : "a glass zar for your kitchen food keep fresh",
+//         image: [p_img4],
+//         category: "kids",
+//         subcategory: "winterwear",
+//         size: ["s","m","l"],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "eeeee",
-        name: "women damage jeans",
-        price: 9590,
-        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
-        image: [p_img5],
-        category: "women",
-        subcategory: "bottomwear",
-        size: ["s","m","l"],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "eeeee",
+//         name: "women damage jeans",
+//         price: 1000,
+//         description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+//         image: [p_img5],
+//         category: "women",
+//         subcategory: "bottomwear",
+//         size: ["s","m","l"],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "fffff",
-        name: "short top",
-        price: 990,
-        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
-        image: [p_img6],
-        category: "women",
-        subcategory: "topwear",
-        size: ["s","m","l"],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "fffff",
+//         name: "short top",
+//         price: 990,
+//         description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+//         image: [p_img6],
+//         category: "women",
+//         subcategory: "topwear",
+//         size: ["s","m","l"],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "ggggg",
-        name: "water bottle",
-        price: 8880,
-        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
-        image: [p_img7],
-        category: "man",
-        subcategory: "winterware",
-        size: ["s","m","l"],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "ggggg",
+//         name: "water bottle",
+//         price: 8880,
+//         description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+//         image: [p_img7],
+//         category: "man",
+//         subcategory: "winterware",
+//         size: ["s","m","l"],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "hhhhh",
-        name: "fashion & cloth",
-        price: 8880,
-        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
-        image: [p_img8],
-        category: "man",
-        subcategory: "winterwear",
-        size: ["s","m","l"],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "hhhhh",
+//         name: "fashion & cloth",
+//         price: 8880,
+//         description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+//         image: [p_img8],
+//         category: "man",
+//         subcategory: "winterwear",
+//         size: ["s","m","l"],
+//         date: 887908099880,
+//         bestseller: true
 
-    },
-    {
-        _id: "iiiii",
-        name: "fashion & cloth",
-        price: 8880,
-        description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
-        image: [p_img9],
-        category: "man",
-        subcategory: "winterwear",
-        size: ["s","m","l"],
-        date: 887908099880,
-        bestseller: true
+//     },
+//     {
+//         _id: "iiiii",
+//         name: "fashion & cloth",
+//         price: 8880,
+//         description : "a lightweight usually knitted pullover jeans, close-fitting and with damage",
+//         image: [p_img9],
+//         category: "man",
+//         subcategory: "winterwear",
+//         size: ["s","m","l"],
+//         date: 887908099880,
+//         bestseller: true
 
-    }
-];
+//     }
+// ];
 
-export default Products
+// export default Products

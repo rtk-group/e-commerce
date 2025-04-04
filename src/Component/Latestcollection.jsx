@@ -3,22 +3,15 @@ import { shopcontext } from '../Context/Shopcontext.jsx'
 import Tittle from './Tittle.jsx';
 import Productitem from './Productitem.jsx';
 
-
-
-
 const Latestcollection = () => {
 
   const { products } = useContext(shopcontext);
   // console.log(products)
   const [latestproducts, setlatestproducts] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     setlatestproducts(products.slice(0, 5));
-  },[products]);
-
-  // console.log(latestproducts);
-
-
+  }, [products]);
 
   return (
     <div className="my-10">
@@ -31,11 +24,11 @@ const Latestcollection = () => {
       {/* randring products */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {
-          latestproducts.map((item, index)=>(
-            <Productitem key={index} id={item._id} image={item.image} name={item.name} price={item.price}/>
-          ))   
+          latestproducts.map((item, index) => (
+            <Productitem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
+          ))
         }
-        
+
       </div>
 
     </div>

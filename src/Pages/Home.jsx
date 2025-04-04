@@ -5,15 +5,14 @@ import Bestsaller from '../Component/Bestsaller'
 import Ourpolicy from '../Component/Ourpolicy'
 import Newslatterbox from '../Component/Newslatterbox'
 
-
 const Home = () => {
   return (
     <>
-    <Hero/>
-    <Latestcollection/>
-    <Bestsaller/>
-    <Ourpolicy/>
-    <Newslatterbox/>
+      <Hero />
+      <Latestcollection />
+      <Bestsaller />
+      <Ourpolicy />
+      <Newslatterbox />
     </>
   )
 }

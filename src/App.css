@@ -1,0 +1,11 @@
+.select-container {
+    --select-border-color: #ced4da;
+    --select-focus-color: #2684ff;
+    --select-text-color: #212529;
+    --select-disabled-color: #e9ecef;
+    --select-arrow-color: #495057;
+    --select-radius: 4px;
+    --select-padding: 8px 12px;
+    --select-transition: all 0.2s ease;
+  
+    width: 100%}

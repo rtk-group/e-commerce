@@ -4,24 +4,20 @@ import { shopcontext } from '../Context/Shopcontext'
 import Relatedproducts from '../Component/Relatedproducts';
 import { assets } from '../assets/assets';
 
-
-
 const Product = () => {
 
-  const { products , currency , addtocart,} = useContext(shopcontext);
+  const { products, currency, addtocart, } = useContext(shopcontext);
   const { productid } = useParams();
   const [productdata, setproductdata] = useState(false);
   const [image, setimage] = useState('');
   const [size, setsize] = useState('')
 
   const fetchproductdata = async () => {
-
     products.map((item) => {
 
       if (item._id === productid) {
         setproductdata(item);
         setimage(item.image[0]);
-        // console.log(item);
         return null;
       }
     })
@@ -60,7 +56,7 @@ const Product = () => {
             <img src={assets.star_icon} className="w-5" />
             <img src={assets.star_icon} className="w-5" />
             <img src={assets.star_icon} className="w-5" />
-            
+
             <p className="pl-2">(112)</p>
           </div>
           <p className="mt-5 text-3xl font-medium">{currency}{productdata.price}</p>
@@ -69,13 +65,13 @@ const Product = () => {
             <p>Select size</p>
             <div className="flex gap-2">
               {
-                productdata.sizes.map((item, index)=>(
-                  <button onClick={()=>setsize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size? 'border-orange-500': ''}`} key={index}>{item}</button>
+                productdata.sizes.map((item, index) => (
+                  <button onClick={() => setsize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size ? 'border-orange-500' : ''}`} key={index}>{item}</button>
                 ))
               }
             </div>
           </div>
-          <button onClick={()=>addtocart(productdata._id, size)} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
+          <button onClick={() => addtocart(productdata._id, size)} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
             <p>100% Original Product.</p>
@@ -97,8 +93,8 @@ const Product = () => {
       </div>
 
       {/* display related products */}
-      <Relatedproducts category={productdata.category} subcategory={productdata.subcategory}/>
-      
+      <Relatedproducts category={productdata.category} subcategory={productdata.subcategory} />
+
     </div>
   ) : <div className="opacity-0"></div>
 }
